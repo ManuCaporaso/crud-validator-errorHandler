@@ -23,12 +23,13 @@ app
 
 
 mongodb.initDb((err) => {
+    (console.log('Conectado a la base de datos'));
     if (err) {
         console.log(err);
     }
     else {
         app.listen(port, () => {
-            console.log(`Todo en orden en el port ${port}`)
+            console.log(`Todo en orden en el puerto ${port}`)
         });
     }
 });
