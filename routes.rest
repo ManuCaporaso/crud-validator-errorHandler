@@ -1,0 +1,40 @@
+@dogID = replace_me
+
+### Get all Dogs
+GET http://localhost:3000/Dogs
+
+### Get a Dog by ID
+GET http://localhost:3000/Dogs/{{dogID}}
+
+### Create a new Dog
+POST http://localhost:3000/Dogs
+Content-Type: application/json
+
+{
+  "name": "Beto",
+  "breed": "Pug",
+  "age": 3,
+  "weightKg": 40,
+  "vaccinated": true,
+  "microchipped": true,
+  "ownerName": "Manuel Caporaso",
+  "ownerPhone": "123-4567"
+}
+
+### Update a Dog:
+PUT http://localhost:3000/Dogs/{{dogID}}
+Content-Type: application/json
+
+{
+  "name": "Dante",
+  "breed": "Boxer",
+  "age": 7,
+  "weightKg": 56,
+  "vaccinated": true,
+  "microchipped": false,
+  "ownerName": "Manuel Caporaso",
+  "ownerPhone": "123-4567"
+}
+
+### Delete a Dog:
+DELETE http://localhost:3000/Dogs/{{dogID}}
