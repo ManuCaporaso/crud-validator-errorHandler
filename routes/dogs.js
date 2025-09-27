@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { body, param } = require('express-validator');
 const validate = require('../middleware/validator').validate;
+const {isAuthenticated} = require('../middleware/authenticate');
 
 const dogsController = require('../controllers/dogs');
 
@@ -16,8 +17,7 @@ router.get(
   dogsController.getOne
 );
 
-router.post(
-  '/',
+router.post('/', isAuthenticated,
   [
     body('name').notEmpty().withMessage('El nombre es obligatorio'),
     body('breed').notEmpty().withMessage('La raza es obligatoria'),
@@ -32,8 +32,7 @@ router.post(
   dogsController.createDog
 );
 
-router.put(
-  '/:id',
+router.put('/:id',isAuthenticated,
   [
     param('id').isMongoId().withMessage('El ID no es válido'),
     body('name').optional().notEmpty().withMessage('El nombre no puede estar vacío'),
@@ -49,8 +48,7 @@ router.put(
   dogsController.updateDog
 );
 
-router.delete(
-  '/:id',
+router.delete('/:id',isAuthenticated,
   [param('id').isMongoId().withMessage('El ID no es válido')],
   validate,
   dogsController.deleteDog

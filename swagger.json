@@ -172,22 +172,13 @@
                 "name": {
                   "example": "any"
                 },
-                "breed": {
-                  "example": "any"
-                },
                 "age": {
                   "example": "any"
                 },
-                "weightKg": {
+                "color": {
                   "example": "any"
                 },
-                "vaccinated": {
-                  "example": "any"
-                },
-                "microchipped": {
-                  "example": "any"
-                },
-                "owner": {
+                "indoor": {
                   "example": "any"
                 }
               }
@@ -236,22 +227,13 @@
                 "name": {
                   "example": "any"
                 },
-                "breed": {
-                  "example": "any"
-                },
                 "age": {
                   "example": "any"
                 },
-                "weightKg": {
+                "color": {
                   "example": "any"
                 },
-                "vaccinated": {
-                  "example": "any"
-                },
-                "microchipped": {
-                  "example": "any"
-                },
-                "owner": {
+                "indoor": {
                   "example": "any"
                 }
               }
